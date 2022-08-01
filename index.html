@@ -101,9 +101,21 @@
         <div class="card_header">LOVE HEADER</div>
         <div class="card_body">
           <form class="form">
-            <input type="text" name="" id="fname" placeholder="Your Name" />
+            <input
+              type="text"
+              required
+              name=""
+              id="fname"
+              placeholder="Your Name"
+            />
             +
-            <input type="text" name="" id="lname" placeholder=" love name" />
+            <input
+              type="text"
+              required
+              name=""
+              id="lname"
+              placeholder=" love name"
+            />
           </form>
           <br />
           <div class="btn">
@@ -124,11 +136,21 @@
     </div>
     <script>
       function lovepercentage() {
+        var lname = document.getElementById("lname").value;
+        var fname = document.getElementById("fname").value;
+        if (fname.length <= 1) {
+          alert("please enter your name greter than 2 characters");
+          return;
+        }
+        if (lname.length <= 1) {
+          alert("please enter your lovename greter than 2 charcters");
+          return;
+        }
         var lovedata = Math.random() * 100;
         lovedata = Math.floor(lovedata);
-        document.getElementById("lovedata").value = lovedata;
+        document.getElementById("lovedata").value = lovedata + "%";
         // document.getElementById("fname").value = "";
-        // document.getElementById("lname").value = "";
+        // document.getElementById("lname").value;
       }
     </script>
   </body>
